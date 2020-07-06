@@ -166,60 +166,6 @@ def getch():
 	return ch
 
 # Control
-#while True :
-
-#FRONT WHEELS TEST
-
-#	d1_motor_A_Enabled(Direction.CC)
-#	d1_motor_B_Enabled(Direction.CC)
-#	sleep(2)
-
-#	d1_motor_A_Disabled()
-#	d1_motor_B_Disabled()
-#	sleep(5)
-
-
-#	d1_motor_A_Enabled(Direction.CW)
-#	d1_motor_B_Enabled(Direction.CW)
-
-#	sleep(2)
-
-#	d1_motor_A_Disabled()
-#	d1_motor_B_Disabled()
-#	sleep(5)
-
-#       d1_motor_A_Enabled(Direction.CC)
-#       d1_motor_B_Enabled(Direction.CC)
-#       sleep(2)
-
-#       d1_motor_A_Disabled()
-#       d1_motor_B_Disabled()
-#       sleep(5)
-
-
-#BACK WHEELS TEST
-
-#       d2_motor_A_Enabled(Direction.CW)
-#       d2_motor_B_Enabled(Direction.CW)
-
-#       sleep(2)
-
-#       d2_motor_A_Disabled()
-#       d2_motor_B_Disabled()
-#       sleep(5)
-
-#SIMPLE TEST
-
-#	stop()
-#	sleep(2)
-#	forward()
-#	sleep(3)
-#	stop()
-#	sleep(2)
-#	back()
-#	sleep(3)
-#	stop()
-#	sleep(3)
 
 var = 'n'
 #todo w and s reverse
