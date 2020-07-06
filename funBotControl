@@ -10,6 +10,22 @@ GPIO.setwarnings(False)
 GPIO.setmode(GPIO.BCM)
 
 #====================
+# Camera movement (servo motor)
+#====================
+servoRotatePin = 8
+servoTiltPin = 7
+
+GPIO.setup(servoRotatePin, GPIO.OUT)
+GPIO.setup(servoTiltPin, GPIO.OUT)
+
+servoRotate= GPIO.PWM(servoRotatePin, 50)
+servoTilt = GPIO.PWM(servoTiltPin, 50)
+
+servoRotate.start(0)
+servoTilt.start(0)
+
+#====================
+# Car movement
 # d1 = driver 1
 # d2 = driver 2
 #====================
@@ -152,6 +168,35 @@ def stop():
 	d2_motor_A_Disabled()
 	d2_motor_B_Disabled()
 
+
+
+#
+# Rotate Camera
+#
+
+def rotateCameraRight():
+	startVal: Float = 2
+	for x in range (10):
+		servoRotate.ChangeDutyCycle(startVal + 0.5)
+		sleep(0.5)
+		servoRotate.start(0)
+
+def rotateCameraLeft():
+	for x in range (7, 12):
+		servoRotate.ChangeDutyCycle(7.5)
+		sleep(0.2)
+		servoRotate.start(0)
+
+def tiltCameraTop():
+	servoTilt.ChangeDutyCycle(6)
+	sleep(0.5)
+	servoTilt.start(0)
+
+def tiltCameraBottom():
+	servoTilt.ChangeDutyCycle(8)
+	sleep(0.5)
+	servoTilt.start(0)
+
 import tty
 import sys
 import termios
@@ -167,7 +212,7 @@ def getch():
 
 # Control
 
-var = 'n'
+var = ''
 #todo w and s reverse
 while var != 'q':
 	var = getch()
@@ -181,5 +226,14 @@ while var != 'q':
 		right()
 	if var == 'o':
 		stop()
+	if var == 'n':
+		rotateCameraRight()
+	if var == 'm':
+		rotateCameraLeft()
+	if var == 'k':
+		tiltCameraTop()
+	if var == 'l':
+		tiltCameraBottom()
 
 	sleep(0.1)
+	print (var)
