@@ -102,8 +102,7 @@ font = ImageFont.load_default()
 # Some other nice fonts to try: http://www.dafont.com/bitmap.php
 # font = ImageFont.truetype('Minecraftia.ttf', 8)
 
-#while True:
-def showDeviceInfo():
+while True:
 
     # Draw a black filled box to clear the image.
     draw.rectangle((0,0,width,height), outline=0, fill=0)
@@ -120,10 +119,10 @@ def showDeviceInfo():
 
     # Write two lines of text.
 
-    draw.text((x, top),       "IP: " + str(IP.decode('utf-8')),  font=font, fill=225)
-    draw.text((x, top+8),     str(CPU.decode('utf-8')), font=font, fill=225)
-    draw.text((x, top+16),    str(MemUsage.decode('utf-8')),  font=font, fill=225)
-    draw.text((x, top+25),    str(Disk.decode('utf-8')),  font=font, fill=225)
+    draw.text((x, top),       "IP: " + str(IP),  font=font, fill=255)
+    draw.text((x, top+8),     str(CPU), font=font, fill=255)
+    draw.text((x, top+16),    str(MemUsage),  font=font, fill=255)
+    draw.text((x, top+25),    str(Disk),  font=font, fill=255)
 
     # Display image.
     disp.image(image)

@@ -1,6 +1,8 @@
 import RPi.GPIO as GPIO
 import enum
 from time import sleep
+import displayData
+
 
 class Direction(enum.Enum):
 	CW = 1
@@ -234,6 +236,8 @@ while var != 'q':
 		tiltCameraTop()
 	if var == 'l':
 		tiltCameraBottom()
+	if var == '1':
+		displayData.showDeviceInfo()
 
 	sleep(0.1)
 	print (var)
