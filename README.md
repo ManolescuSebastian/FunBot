@@ -1,5 +1,12 @@
+Project in progress
+----
+
 # FunBot
 Raspberry pi rc with camera for image detection
+
+How it looks
+-----
+<img src="https://github.com/ManolescuSebastian/FunBot/blob/master/res/car_img.jpg" width="50%"></img>
 
 
 Project Structure
